@@ -9,7 +9,10 @@ function App(): JSX.Element {
             </header>
             <p>Avinash Chouhan | Hello World</p>
             <h1>Intial HTML/CSS Practice</h1>
-            <img src="" alt="A " />
+            <img
+                src="tasks_fork\src\images\Redbull F1 Car.jpg"
+                alt="A Redbull F1 car in the rain."
+            />
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
