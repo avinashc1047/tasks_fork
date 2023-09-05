@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/tasks_fork/static/css/main.39f589df.css",
-    "main.js": "/tasks_fork/static/js/main.bfa26dfc.js",
+    "main.css": "/tasks_fork/static/css/main.2d6fc3ad.css",
+    "main.js": "/tasks_fork/static/js/main.14d19552.js",
     "static/js/787.4ef7427d.chunk.js": "/tasks_fork/static/js/787.4ef7427d.chunk.js",
+    "static/media/Redbull_f1.jpg": "/tasks_fork/static/media/Redbull_f1.a35d133ca172230b673b.jpg",
     "index.html": "/tasks_fork/index.html",
-    "main.39f589df.css.map": "/tasks_fork/static/css/main.39f589df.css.map",
-    "main.bfa26dfc.js.map": "/tasks_fork/static/js/main.bfa26dfc.js.map",
+    "main.2d6fc3ad.css.map": "/tasks_fork/static/css/main.2d6fc3ad.css.map",
+    "main.14d19552.js.map": "/tasks_fork/static/js/main.14d19552.js.map",
     "787.4ef7427d.chunk.js.map": "/tasks_fork/static/js/787.4ef7427d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.39f589df.css",
-    "static/js/main.bfa26dfc.js"
+    "static/css/main.2d6fc3ad.css",
+    "static/js/main.14d19552.js"
   ]
 }
