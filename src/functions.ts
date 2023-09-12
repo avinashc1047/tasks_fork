@@ -1,4 +1,4 @@
-import { TrustedTypesEnforcer } from "trusted-types";
+// *Never used kept giving erros during website build* import { TrustedTypesEnforcer } from "trusted-types";
 
 /**
  * Consumes a single temperature in Fahrenheit (a number) and converts to Celsius
