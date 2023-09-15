@@ -75,3 +75,16 @@ export function convertYesNo(word: string): boolean | null {
         return false;
     } else return null;
 }
+
+// Inclass Activity functions
+export function lengthOfText(text: string): boolean {
+    return text.length >= 10 ? true : false;
+}
+
+export function kgToLbs(weight: number): number {
+    return weight / 2.2;
+}
+
+export function find(subtext: string, text: string): boolean {
+    return text.includes(subtext) ? true : false;
+}
