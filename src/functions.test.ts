@@ -3,7 +3,10 @@ import {
     fahrenheitToCelius,
     shout,
     isQuestion,
-    convertYesNo
+    convertYesNo,
+    lengthOfText,
+    kgToLbs,
+    find
 } from "./functions";
 
 describe("Testing the basic functions", () => {
@@ -55,5 +58,24 @@ describe("Testing the basic functions", () => {
         expect(convertYesNo("Nope")).toBe(null);
         expect(convertYesNo("Yesterday")).toBe(null);
         expect(convertYesNo("Maybe")).toBe(null);
+    });
+
+    // Inclass activity functions
+    test("Testing length of 10", () => {
+        expect(lengthOfText("Avinash")).toBe(false);
+        expect(lengthOfText("HelloHello")).toBe(true);
+        expect(lengthOfText("")).toBe(false);
+    });
+
+    test("Testing kg to lbs", () => {
+        expect(kgToLbs(50)).toBe(22.727272727272727);
+        expect(kgToLbs(0)).toBe(0);
+        expect(kgToLbs(2.2)).toBe(1);
+    });
+
+    test("Testing the string in function", () => {
+        expect(find("car", "racecar")).toBe(true);
+        expect(find("hi", "0")).toBe(false);
+        expect(find("", "")).toBe(true);
     });
 });
