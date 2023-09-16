@@ -24,7 +24,9 @@ export function bookEndList(numbers: number[]): number[] {
  * number has been tripled (multiplied by 3).
  */
 export function tripleNumbers(numbers: number[]): number[] {
-    return numbers;
+    const nums = [...numbers];
+    const tripled = nums.map((num: number): number => num * 3);
+    return tripled;
 }
 
 /**
@@ -88,7 +90,7 @@ export function makeMath(addends: number[]): string {
  * with one difference. After the FIRST negative number, insert the sum of all
  * previous numbers in the list. If there are no negative numbers, then append
  * the sum to the list.
- *
+ *p
  * For instance, the array [1, 9, -5, 7] would become [1, 9, -5, 10, 7]
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
