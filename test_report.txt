@@ -2,9 +2,9 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test --coverage
 
+PASS src/arrays.test.ts
 PASS src/functions.test.ts
 PASS src/HtmlCss.test.tsx
-PASS src/text.test.tsx
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
 declaring it in its dependencies. This is currently working because
@@ -17,17 +17,19 @@ ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
 your devDependencies to work around this error. This will make this message
 go away.[0m
   
+PASS src/text.test.tsx
 PASS src/App.test.tsx
 --------------|---------|----------|---------|---------|-------------------
 File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------|---------|----------|---------|---------|-------------------
-All files     |   83.33 |    81.81 |     100 |   83.33 |                   
+All files     |   92.55 |    90.47 |     100 |   91.95 |                   
  App.tsx      |     100 |      100 |     100 |     100 |                   
+ arrays.ts    |   96.87 |      100 |     100 |   96.49 | 97,122            
  functions.ts |   82.14 |    81.81 |     100 |   82.14 | 28,33-36,46       
 --------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 4 passed, 4 total
-Tests:       17 passed, 17 total
+Test Suites: 5 passed, 5 total
+Tests:       26 passed, 26 total
 Snapshots:   0 total
-Time:        4.07 s
+Time:        3.886 s
 Ran all test suites.
