@@ -3,8 +3,8 @@
 > react-scripts test --coverage
 
 PASS src/arrays.test.ts
+PASS src/objects.test.ts
 PASS src/functions.test.ts
-PASS src/HtmlCss.test.tsx
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
 declaring it in its dependencies. This is currently working because
@@ -17,19 +17,24 @@ ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
 your devDependencies to work around this error. This will make this message
 go away.[0m
   
+PASS src/HtmlCss.test.tsx
 PASS src/text.test.tsx
 PASS src/App.test.tsx
---------------|---------|----------|---------|---------|-------------------
-File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
---------------|---------|----------|---------|---------|-------------------
-All files     |   92.55 |    90.47 |     100 |   91.95 |                   
- App.tsx      |     100 |      100 |     100 |     100 |                   
- arrays.ts    |   96.87 |      100 |     100 |   96.49 | 97,122            
- functions.ts |   82.14 |    81.81 |     100 |   82.14 | 28,33-36,46       
---------------|---------|----------|---------|---------|-------------------
+----------------|---------|----------|---------|---------|-------------------
+File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------------|---------|----------|---------|---------|-------------------
+All files       |   93.44 |     91.3 |     100 |   93.04 |                   
+ src            |   93.44 |     91.3 |     100 |   93.04 |                   
+  App.tsx       |     100 |      100 |     100 |     100 |                   
+  arrays.ts     |   96.87 |      100 |     100 |   96.49 | 97,122            
+  functions.ts  |   82.14 |    81.81 |     100 |   82.14 | 28,33-36,46       
+  objects.ts    |   96.42 |      100 |     100 |   96.42 | 94                
+ src/interfaces |       0 |        0 |       0 |       0 |                   
+  question.ts   |       0 |        0 |       0 |       0 |                   
+----------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 5 passed, 5 total
-Tests:       26 passed, 26 total
+Test Suites: 6 passed, 6 total
+Tests:       36 passed, 36 total
 Snapshots:   0 total
-Time:        3.886 s
+Time:        6.143 s
 Ran all test suites.
