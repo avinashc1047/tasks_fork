@@ -76,7 +76,7 @@ export function toShortForm(question: Question): string {
  * |- Option 2                  |
  * |- Option 3                  |
  * ------------------------------
- * Check the unit tests for more examples of what this looks like! 
+ * Check the unit tests for more examples of what this looks like!
  */
 export function toMarkdown(question: Question): string {
     return "";
