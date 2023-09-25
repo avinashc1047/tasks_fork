@@ -59,21 +59,33 @@ export function removeQuestion(questions: Question[], id: number): Question[] {
  * questions, as an array.
  */
 export function getNames(questions: Question[]): string[] {
-    return [];
+    const names = questions.map((question: Question): string => question.name);
+    return names;
 }
 
 /***
  * Consumes an array of questions and returns the sum total of all their points added together.
  */
 export function sumPoints(questions: Question[]): number {
-    return 0;
+    const points = questions.reduce(
+        (sumPnts: number, question: Question) => sumPnts + question.points,
+        0
+    );
+    return points;
 }
 
 /***
  * Consumes an array of questions and returns the sum total of the PUBLISHED questions.
  */
 export function sumPublishedPoints(questions: Question[]): number {
-    return 0;
+    const published = questions.filter(
+        (question: Question): boolean => question.published
+    );
+    const points = published.reduce(
+        (sumPnts: number, question: Question) => sumPnts + question.points,
+        0
+    );
+    return points;
 }
 
 /***
