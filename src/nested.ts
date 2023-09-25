@@ -106,7 +106,14 @@ id,name,options,points,published
  * Check the unit tests for more examples!
  */
 export function toCSV(questions: Question[]): string {
-    return "";
+    const txt = questions.reduce(
+        (info: string, question: Question) =>
+            info +
+            // eslint-disable-next-line prettier/prettier
+            `\n${question.id.toString()},${question.name},${question.options.length.toString()},${question.points.toString()},${question.published}`,
+        "id,name,options,points,published"
+    );
+    return txt;
 }
 
 /**
