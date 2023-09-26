@@ -2,6 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test --coverage
 
+PASS src/nested.test.ts
 PASS src/arrays.test.ts
 PASS src/objects.test.ts
 PASS src/functions.test.ts
@@ -23,18 +24,20 @@ PASS src/App.test.tsx
 ----------------|---------|----------|---------|---------|-------------------
 File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------------|---------|----------|---------|---------|-------------------
-All files       |   93.44 |     91.3 |     100 |   93.04 |                   
- src            |   93.44 |     91.3 |     100 |   93.04 |                   
+All files       |   95.62 |    93.84 |     100 |    95.4 |                   
+ src            |   95.62 |    93.84 |     100 |    95.4 |                   
   App.tsx       |     100 |      100 |     100 |     100 |                   
   arrays.ts     |   96.87 |      100 |     100 |   96.49 | 97,122            
   functions.ts  |   82.14 |    81.81 |     100 |   82.14 | 28,33-36,46       
+  nested.ts     |     100 |      100 |     100 |     100 |                   
   objects.ts    |   96.42 |      100 |     100 |   96.42 | 94                
  src/interfaces |       0 |        0 |       0 |       0 |                   
+  answer.ts     |       0 |        0 |       0 |       0 |                   
   question.ts   |       0 |        0 |       0 |       0 |                   
 ----------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 6 passed, 6 total
-Tests:       36 passed, 36 total
+Test Suites: 7 passed, 7 total
+Tests:       52 passed, 52 total
 Snapshots:   0 total
-Time:        6.143 s
+Time:        4.822 s
 Ran all test suites.
