@@ -1,5 +1,6 @@
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
+import { duplicateQuestion, makeBlankQuestion } from "./objects";
 
 /**
  * Consumes an array of questions and returns a new array with only the questions
@@ -122,7 +123,15 @@ export function toCSV(questions: Question[]): string {
  * making the `text` an empty string, and using false for both `submitted` and `correct`.
  */
 export function makeAnswers(questions: Question[]): Answer[] {
-    return [];
+    const ans: Answer[] = questions.map(
+        (question: Question): Answer => ({
+            questionId: question.id,
+            text: "",
+            submitted: false,
+            correct: false
+        })
+    );
+    return ans;
 }
 
 /***
@@ -130,7 +139,10 @@ export function makeAnswers(questions: Question[]): Answer[] {
  * each question is now published, regardless of its previous published status.
  */
 export function publishAll(questions: Question[]): Question[] {
-    return [];
+    const publish = questions.map(
+        (question: Question): Question => ({ ...question, published: true })
+    );
+    return publish;
 }
 
 /***
@@ -138,7 +150,12 @@ export function publishAll(questions: Question[]): Question[] {
  * are the same type. They can be any type, as long as they are all the SAME type.
  */
 export function sameType(questions: Question[]): boolean {
-    return false;
+    if (questions.length === 0) return true;
+    const type: string = questions[0].type;
+    const filt = questions.filter(
+        (question: Question) => type === question.type
+    );
+    return filt.length === questions.length;
 }
 
 /***
@@ -152,7 +169,8 @@ export function addNewQuestion(
     name: string,
     type: QuestionType
 ): Question[] {
-    return [];
+    const ans = [...questions, makeBlankQuestion(id, name, type)];
+    return ans;
 }
 
 /***
@@ -165,7 +183,13 @@ export function renameQuestionById(
     targetId: number,
     newName: string
 ): Question[] {
-    return [];
+    const target = questions.map(
+        (question: Question): Question => ({
+            ...question,
+            name: targetId === question.id ? newName : question.name
+        })
+    );
+    return target;
 }
 
 /***
@@ -180,7 +204,20 @@ export function changeQuestionTypeById(
     targetId: number,
     newQuestionType: QuestionType
 ): Question[] {
-    return [];
+    const target = questions.map(
+        (question: Question): Question => ({
+            ...question,
+            type: targetId === question.id ? newQuestionType : question.type,
+            options:
+                // eslint-disable-next-line prettier/prettier
+                (targetId === question.id &&
+                // eslint-disable-next-line prettier/prettier
+                newQuestionType === "short_answer_question")
+                    ? []
+                    : question.options
+        })
+    );
+    return target;
 }
 
 /**
@@ -199,7 +236,32 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string
 ): Question[] {
-    return [];
+    const target = questions.map(
+        (question: Question): Question => ({
+            ...question,
+            options:
+                targetId === question.id
+                    ? // eslint-disable-next-line prettier/prettier
+                    edit_option_helper(question.options, newOption, targetOptionIndex)
+                    : question.options
+        })
+    );
+    return target;
+}
+
+export function edit_option_helper(
+    options: string[],
+    newOption: string,
+    targetIndex: number
+): string[] {
+    let added: string[] = [];
+    if (targetIndex === -1) {
+        added = [...options, newOption];
+    } else {
+        added = [...options];
+        added.splice(targetIndex, 1, newOption);
+    }
+    return added;
 }
 
 /***
@@ -213,5 +275,11 @@ export function duplicateQuestionInArray(
     targetId: number,
     newId: number
 ): Question[] {
-    return [];
+    const original_index = questions.findIndex(
+        (question: Question): boolean => targetId === question.id
+    );
+    const duplicate = duplicateQuestion(newId, questions[original_index]);
+    const ans = [...questions];
+    ans.splice(original_index + 1, 0, duplicate);
+    return ans;
 }
