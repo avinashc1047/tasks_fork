@@ -209,7 +209,7 @@ export function changeQuestionTypeById(
             ...question,
             type: targetId === question.id ? newQuestionType : question.type,
             options:
-                // eslint-disable-next-line prettier/prettier
+                // eslint-disable-next-line prettier/prettier, no-extra-parens
                 (targetId === question.id &&
                 // eslint-disable-next-line prettier/prettier
                 newQuestionType === "short_answer_question")
