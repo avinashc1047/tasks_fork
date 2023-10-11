@@ -27,6 +27,7 @@ export function EditMode(): JSX.Element {
 
             <div>
                 <Form.Check
+                    inline
                     type="switch"
                     id="is-edit-mode"
                     label="edit?"
@@ -38,6 +39,7 @@ export function EditMode(): JSX.Element {
             {!mode && (
                 <div>
                     <Form.Check
+                        inline
                         type="checkbox"
                         id="is-student-check"
                         label="student?"
